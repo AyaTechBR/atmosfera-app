@@ -13,18 +13,30 @@ export default function Screen07Transition({ isActive }: ScreenProps) {
     >
       {/* Split background images */}
       <div className="absolute inset-0 grid grid-cols-2">
-        <div className="relative">
-          <ImagePlaceholder aspectRatio="full" label="Ambiente de trabalho" className="absolute inset-0" />
+        <div className="relative overflow-hidden">
+          <ImagePlaceholder
+            aspectRatio="full"
+            label="Ambiente de trabalho"
+            src="/atmosfera-app/images/img-moodboard-1.jpg"
+            objectPosition="center center"
+            className="absolute inset-0"
+          />
           <div
             className="absolute inset-0"
-            style={{ background: 'rgba(10,10,10,0.6)' }}
+            style={{ background: 'rgba(10,10,10,0.55)' }}
           />
         </div>
-        <div className="relative">
-          <ImagePlaceholder aspectRatio="full" label="Profissionais em ação" className="absolute inset-0" />
+        <div className="relative overflow-hidden">
+          <ImagePlaceholder
+            aspectRatio="full"
+            label="Profissionais em ação"
+            src="/atmosfera-app/images/img-piscina-notebook.webp"
+            objectPosition="center center"
+            className="absolute inset-0"
+          />
           <div
             className="absolute inset-0"
-            style={{ background: 'rgba(10,10,10,0.6)' }}
+            style={{ background: 'rgba(10,10,10,0.55)' }}
           />
         </div>
       </div>

@@ -9,6 +9,8 @@ interface DeliveryScreenProps {
   body: string | React.ReactNode;
   highlight?: string;
   imagePlaceholder?: string;
+  imageSrc?: string;
+  imagePosition?: string;
   showImage?: boolean;
   children?: React.ReactNode;
 }
@@ -31,6 +33,8 @@ export default function DeliveryScreen({
   body,
   highlight,
   imagePlaceholder = 'Imagem',
+  imageSrc,
+  imagePosition = 'center',
   showImage = true,
   children,
 }: DeliveryScreenProps) {
@@ -116,13 +120,15 @@ export default function DeliveryScreen({
           initial={{ opacity: 0, x: 30 }}
           animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
           transition={{ delay: 0.5, duration: 0.9 }}
-          className="hidden md:flex flex-1 items-center justify-center p-10"
+          className="hidden md:flex flex-1 items-stretch overflow-hidden"
           style={{ background: '#0D0D0D', borderLeft: '1px solid #1A1A1A' }}
         >
           <ImagePlaceholder
-            aspectRatio="4/3"
+            aspectRatio="full"
             label={imagePlaceholder}
-            className="w-full rounded-sm"
+            src={imageSrc}
+            objectPosition={imagePosition}
+            className="w-full"
           />
         </motion.div>
       )}

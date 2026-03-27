@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import DeliveryScreen from '../components/DeliveryScreen';
+import ImagePlaceholder from '../components/ImagePlaceholder';
+
+const BASE = '/atmosfera-app/images';
 
 interface ScreenProps {
   isActive: boolean;
@@ -14,6 +17,8 @@ export function Screen16Marketplace({ isActive }: ScreenProps) {
       title="Marketplace de Parceiros e Fornecedores"
       body="Acesso a uma rede curada e qualificada de parceiros homologados: fotografia, podcast, vídeo, IA, 3D, growth, e-commerce, audiovisual, performance e mais. Fornecedores validados, com preço de parceria e qualidade garantida. Suporte contínuo para qualquer demanda complementar que a operação de marketing precisar."
       imagePlaceholder="Rede de parceiros"
+      imageSrc={`${BASE}/img-breno-reuniao.webp`}
+      imagePosition="center center"
     />
   );
 }
@@ -234,6 +239,8 @@ export function Screen19Events({ isActive }: ScreenProps) {
       body="O Atmosfera é um laboratório coletivo de práticas reais. Mais de 25 empresas fazem parte desse ecossistema — incluindo algumas das maiores marcas do Espírito Santo. São centenas de projetos acontecendo simultaneamente, criando um banco de dados vivo do que funciona e do que não funciona."
       highlight="Workshops temáticos, eventos de networking e capacitação contínua fazem parte do calendário fixo do programa."
       imagePlaceholder="Eventos e workshops"
+      imageSrc={`${BASE}/img-piscina-notebook.webp`}
+      imagePosition="center center"
     />
   );
 }
@@ -335,21 +342,16 @@ export function Screen20Infrastructure({ isActive }: ScreenProps) {
         initial={{ opacity: 0, x: 30 }}
         animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
         transition={{ delay: 0.5, duration: 0.9 }}
-        className="hidden md:flex flex-1 items-center justify-center p-10"
+        className="hidden md:flex flex-1 items-stretch overflow-hidden"
         style={{ background: '#0D0D0D', borderLeft: '1px solid #1A1A1A' }}
       >
-        <div
-          className="w-full h-48 flex flex-col items-center justify-center gap-3"
-          style={{ border: '1px dashed rgba(245,166,35,0.2)', background: '#111' }}
-        >
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,166,35,0.3)" strokeWidth="1">
-            <rect x="3" y="3" width="18" height="18" rx="2" />
-            <path d="M3 9h18M9 21V9" />
-          </svg>
-          <span style={{ color: 'rgba(245,166,35,0.3)', fontSize: '0.6rem', letterSpacing: '0.15em', fontFamily: 'Sora, sans-serif', textTransform: 'uppercase' }}>
-            Espaço Físico · Hub WeBelieve
-          </span>
-        </div>
+        <ImagePlaceholder
+          aspectRatio="full"
+          label="Espaço Físico · Hub WeBelieve"
+          src={`${BASE}/img-escritorio-fone.jpg`}
+          objectPosition="center center"
+          className="w-full"
+        />
       </motion.div>
     </div>
   );

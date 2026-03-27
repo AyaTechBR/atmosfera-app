@@ -2,15 +2,44 @@ interface ImagePlaceholderProps {
   className?: string;
   label?: string;
   aspectRatio?: '16/9' | '4/3' | '1/1' | 'full';
+  src?: string;
+  objectPosition?: string;
 }
 
-export default function ImagePlaceholder({ className = '', label = 'Imagem', aspectRatio = '16/9' }: ImagePlaceholderProps) {
+export default function ImagePlaceholder({
+  className = '',
+  label = 'Imagem',
+  aspectRatio = '16/9',
+  src,
+  objectPosition = 'center',
+}: ImagePlaceholderProps) {
   const aspectClass = {
     '16/9': 'aspect-video',
     '4/3': 'aspect-[4/3]',
     '1/1': 'aspect-square',
     'full': 'h-full w-full',
   }[aspectRatio];
+
+  if (src) {
+    return (
+      <div
+        className={`img-placeholder ${aspectClass} ${className} overflow-hidden`}
+        style={{ position: 'relative' }}
+      >
+        <img
+          src={src}
+          alt={label}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition,
+            display: 'block',
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div
@@ -25,7 +54,6 @@ export default function ImagePlaceholder({ className = '', label = 'Imagem', asp
         gap: '0.75rem',
       }}
     >
-      {/* Camera icon */}
       <svg
         width="32"
         height="32"

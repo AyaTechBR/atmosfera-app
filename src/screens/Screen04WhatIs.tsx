@@ -81,13 +81,15 @@ export default function Screen04WhatIs({ isActive }: ScreenProps) {
         initial={{ opacity: 0, x: 40 }}
         animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
         transition={{ delay: 0.5, duration: 0.9 }}
-        className="hidden md:flex flex-1 h-full items-center justify-center p-10"
-        style={{ maxWidth: '40%' }}
+        className="hidden md:block h-full overflow-hidden"
+        style={{ maxWidth: '40%', flex: '0 0 40%' }}
       >
         <ImagePlaceholder
-          aspectRatio="4/3"
+          aspectRatio="full"
           label="Ambiente Atmosfera / We Believe Hub"
-          className="w-full rounded-sm"
+          src="/atmosfera-app/images/img-escritorio-fone.jpg"
+          objectPosition="center center"
+          className="w-full h-full"
         />
       </motion.div>
     </div>

@@ -48,16 +48,19 @@ export default function Screen00Hero({ onEnter }: Screen00HeroProps) {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Eyebrow */}
-        <motion.p
+        {/* Logo */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-gold text-[0.6rem] tracking-[0.4em] uppercase mb-10"
-          style={{ fontFamily: 'Sora, sans-serif' }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mb-10"
         >
-          Grupo BLVR · Atmosfera 3.0
-        </motion.p>
+          <img
+            src="/atmosfera-app/images/logo-atmosfera.webp"
+            alt="Atmosfera"
+            style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+          />
+        </motion.div>
 
         {/* Main headline word by word */}
         <h1

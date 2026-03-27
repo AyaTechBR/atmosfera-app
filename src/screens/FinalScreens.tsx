@@ -7,6 +7,12 @@ interface ScreenProps {
 }
 
 export function Screen23Team({ isActive }: ScreenProps) {
+  const teamImages = [
+    '/atmosfera-app/images/img-breno-reuniao.webp',
+    '/atmosfera-app/images/img-reuniao-mesa.jpg',
+    '/atmosfera-app/images/img-correndo-rua.jpg',
+  ];
+
   const team = [
     {
       name: 'Breno Rabelo',
@@ -57,6 +63,8 @@ export function Screen23Team({ isActive }: ScreenProps) {
             <ImagePlaceholder
               aspectRatio={i < 2 ? '1/1' : '16/9'}
               label={`Foto: ${member.name}`}
+              src={teamImages[i]}
+              objectPosition="center top"
               className="mb-4 rounded-sm"
             />
             <p

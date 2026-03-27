@@ -14,12 +14,12 @@ export default function AtmosHeader() {
         borderBottom: '1px solid rgba(34, 34, 34, 0.8)',
       }}
     >
-      <span
-        className="text-white text-xs font-light"
-        style={{ letterSpacing: '0.35em', fontFamily: 'Sora, sans-serif' }}
-      >
-        A T M O S F E R A
-      </span>
+      {/* Logo Atmosfera */}
+      <img
+        src="/atmosfera-app/images/logo-atmosfera.webp"
+        alt="Atmosfera"
+        style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+      />
 
       <span
         className="text-white text-xs font-semibold"
